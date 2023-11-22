@@ -316,7 +316,8 @@ class ReactNativeZoomableView extends Component<
    */
   private grabZoomSubjectOriginalMeasurements = () => {
     // make sure we measure after animations are complete
-    InteractionManager.runAfterInteractions(() => {
+    // TODO : Doesn't work
+    // InteractionManager.runAfterInteractions(() => {
       // this setTimeout is here to fix a weird issue on iOS where the measurements are all `0`
       // when navigating back (react-navigation stack) from another view
       // while closing the keyboard at the same time
@@ -339,7 +340,7 @@ class ReactNativeZoomableView extends Component<
           }
         );
       });
-    });
+    // });
   };
 
   /**
